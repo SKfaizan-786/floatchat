@@ -82,11 +82,15 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="bg-background py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="features" className="bg-slate-900 py-24 sm:py-32 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 gradient-ocean-radial opacity-50"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900/50 to-slate-900"></div>
+      
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
         <div className="mx-auto max-w-2xl text-center">
           <motion.h2
-            className="text-base font-semibold leading-7 text-primary"
+            className="text-base font-semibold leading-7 text-blue-400"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -95,7 +99,7 @@ export function Features() {
             Everything you need
           </motion.h2>
           <motion.p
-            className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -104,7 +108,7 @@ export function Features() {
             Powerful features for ocean data exploration
           </motion.p>
           <motion.p
-            className="mt-6 text-lg leading-8 text-muted-foreground"
+            className="mt-6 text-lg leading-8 text-blue-100"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -120,21 +124,50 @@ export function Features() {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.name}
-                className="flex flex-col"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className="flex flex-col group"
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <dt className="text-base font-semibold leading-7 text-foreground">
-                  <div className={`mb-6 flex h-10 w-10 items-center justify-center rounded-lg ${feature.bgColor}`}>
-                    <feature.icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
-                  </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
+                <div className="glass-card rounded-xl p-6 h-full transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/10 overflow-hidden relative">
+                  {/* Animated background gradient on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.3 }}
+                  />
+                  
+                  <dt className="text-base font-semibold leading-7 text-white relative z-10">
+                    <motion.div 
+                      className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/20 ring-1 ring-blue-400/30"
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    >
+                      <feature.icon className="h-6 w-6 text-blue-400" aria-hidden="true" />
+                    </motion.div>
+                    <motion.span
+                      className="group-hover:text-blue-200 transition-colors duration-300"
+                    >
+                      {feature.name}
+                    </motion.span>
+                  </dt>
+                  <dd className="mt-3 flex flex-auto flex-col text-base leading-7 text-blue-100 relative z-10">
+                    <motion.p 
+                      className="flex-auto group-hover:text-blue-50 transition-colors duration-300"
+                      initial={{ opacity: 0.9 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      {feature.description}
+                    </motion.p>
+                  </dd>
+                </div>
               </motion.div>
             ))}
           </dl>

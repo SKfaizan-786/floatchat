@@ -53,7 +53,7 @@ const social = [
 
 export function Footer() {
   return (
-    <footer className="bg-background" aria-labelledby="footer-heading">
+    <footer className="bg-slate-900 border-t border-slate-700" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -61,10 +61,10 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <div className="flex items-center space-x-2">
-              <Waves className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">FloatChat</span>
+              <Waves className="h-8 w-8 text-blue-400" />
+              <span className="text-xl font-bold text-white">FloatChat</span>
             </div>
-            <p className="text-sm leading-6 text-muted-foreground">
+            <p className="text-sm leading-6 text-blue-100">
               Democratizing ocean data through AI-powered conversations. 
               Explore, analyze, and understand the world's oceans like never before.
             </p>
@@ -73,7 +73,7 @@ export function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-blue-300 hover:text-white transition-colors"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-5 w-5" aria-hidden="true" />
@@ -84,13 +84,13 @@ export function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-foreground">Product</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Product</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.product.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm leading-6 text-blue-200 hover:text-white transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -99,13 +99,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-foreground">Company</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm leading-6 text-blue-200 hover:text-white transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -116,13 +116,13 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-foreground">Resources</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Resources</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.resources.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm leading-6 text-blue-200 hover:text-white transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -131,13 +131,13 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-foreground">Legal</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-muted-foreground hover:text-foreground transition-colors"
+                        className="text-sm leading-6 text-blue-200 hover:text-white transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -148,12 +148,12 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-border pt-8 sm:mt-20 lg:mt-24">
+        <div className="mt-16 border-t border-slate-700 pt-8 sm:mt-20 lg:mt-24">
           <div className="flex flex-col-reverse items-center justify-between gap-4 sm:flex-row">
-            <p className="text-xs leading-5 text-muted-foreground">
+            <p className="text-xs leading-5 text-blue-300">
               &copy; 2024 FloatChat. All rights reserved. Built with ❤️ for ocean research.
             </p>
-            <div className="flex space-x-6 text-xs text-muted-foreground">
+            <div className="flex space-x-6 text-xs text-blue-300">
               <span>Powered by ARGO Network</span>
               <span>•</span>
               <span>Real-time Ocean Data</span>

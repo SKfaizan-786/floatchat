@@ -43,12 +43,12 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-blue-800/30 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Waves className="h-6 w-6 text-primary" />
-            <span className="hidden font-bold sm:inline-block">
+            <Waves className="h-6 w-6 text-blue-400" />
+            <span className="hidden font-bold sm:inline-block text-white">
               FloatChat
             </span>
           </Link>
@@ -117,7 +117,7 @@ export function Navbar() {
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Button>
-            <Button className="ml-2">Get Started</Button>
+            <Button className="ml-2 bg-blue-600 hover:bg-blue-700">Get Started</Button>
           </nav>
         </div>
       </div>
