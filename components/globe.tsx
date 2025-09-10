@@ -4,7 +4,11 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { getFresnelMat } from "../lib/getFresnelMat";
 
-export default function Globe() {
+interface GlobeProps {
+  className?: string;
+}
+
+export default function Globe({ className }: GlobeProps) {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -108,5 +112,5 @@ export default function Globe() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-screen" />;
+  return <div ref={mountRef} className={className ? className + " w-full h-screen" : "w-full h-screen"} />;
 }

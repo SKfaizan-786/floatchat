@@ -4,6 +4,7 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import Link from "next/link"
 
 export function CTA() {
   return (
@@ -55,12 +56,15 @@ export function CTA() {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Button 
-            size="lg" 
+          <Button
+            asChild
+            size="lg"
             className="group bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold"
           >
-            Get Started Free
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <Link href="/signup">
+              Get Started Free
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
           <Button 
             size="lg" 
