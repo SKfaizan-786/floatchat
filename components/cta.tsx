@@ -46,7 +46,7 @@ export function CTA() {
           viewport={{ once: true }}
         >
           Join researchers, scientists, and ocean enthusiasts who are already using FloatChat 
-          to unlock insights from the world's oceans.
+          to unlock insights from the world&apos;s oceans.
         </motion.p>
         
         <motion.div

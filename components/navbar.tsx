@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabaseClient"
+import type { User } from "@supabase/supabase-js"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -40,7 +41,7 @@ const features = [
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [mounted, setMounted] = React.useState(false)
-  const [user, setUser] = React.useState<any>(null);
+  const [user, setUser] = React.useState<User | null>(null);
   const pathname = usePathname();
   const router = useRouter();
 

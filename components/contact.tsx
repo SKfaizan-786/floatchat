@@ -4,7 +4,6 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react"
 
 const contactMethods = [
@@ -84,7 +83,7 @@ export function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Have questions about FloatChat? Want to schedule a demo? We're here to help.
+            Have questions about FloatChat? Want to schedule a demo? We&apos;re here to help.
           </motion.p>
         </div>
 

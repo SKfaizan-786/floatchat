@@ -66,7 +66,7 @@ export function Footer() {
             </div>
             <p className="text-sm leading-6 text-blue-100">
               Democratizing ocean data through AI-powered conversations. 
-              Explore, analyze, and understand the world's oceans like never before.
+              Explore, analyze, and understand the world&apos;s oceans like never before.
             </p>
             <div className="flex space-x-6">
               {social.map((item) => (
