@@ -48,3 +48,4 @@ export function useIntersectionObserver(
 
   return isIntersecting
 }
+

@@ -225,3 +225,4 @@ export function Contact() {
     </section>
   )
 }
+
