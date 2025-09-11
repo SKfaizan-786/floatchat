@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, MessageSquare, Database, BarChart3 } from "lucide-react"
-import { Globe } from "@/components/globe"
+import  Globe  from "@/components/globe"
 import { OceanParticles, WaveAnimation } from "@/components/floating-elements"
 
 export function Hero() {
